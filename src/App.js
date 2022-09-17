@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { useState } from "react"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+   // let numero = 0
+    const [numero, setNumero] = useState(0)
+
+function aumentar(){
+
+    setNumero(numero + 1) 
 }
 
-export default App;
+function diminuir(){
+
+    setNumero(numero - 1) 
+
+}
+    return <div class="container">
+        <h1>Contador</h1>
+        <p>{numero}</p>
+        <div class="buttons">
+        <button class="button button1" onClick={aumentar}>Mais</button> <br></br>
+        <button class="button button2" onClick={diminuir}>Menos</button>
+        </div>
+    </div>
+}
